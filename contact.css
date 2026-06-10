@@ -1,0 +1,33 @@
+.contact-page .page-hero { display: none; }
+
+.contact-page main.contact-main {
+  padding-top: 64px;
+}
+
+.sub-visual--contact .sub-visual-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    linear-gradient(135deg, #7a7a7a 0%, #555 50%, #383838 100%);
+}
+
+.contact-lnb ul {
+  justify-content: center;
+}
+
+.contact-sec {
+  padding-bottom: 80px;
+}
+
+.contact-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.contact-section {
+  padding: 48px 0 0;
+}
+
+.contact-section .contact-box {
+  max-width: 640px;
+  margin: 0 auto;
+}

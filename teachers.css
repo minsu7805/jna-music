@@ -1,0 +1,162 @@
+.teachers-page main.teachers-main {
+  padding-top: 64px;
+}
+
+.sub-visual--teachers .sub-visual-bg {
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    linear-gradient(135deg, #7a7a7a 0%, #555 50%, #3d3d3d 100%);
+}
+
+.teachers-lead {
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: 1.7;
+  margin-top: 12px;
+  max-width: 560px;
+}
+
+.teachers-sec {
+  padding-bottom: 80px;
+}
+
+.teachers-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.instructor-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.thumb-card {
+  cursor: pointer;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: var(--bg-card);
+  padding: 0;
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.thumb-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.thumb-card.is-active {
+  border-color: var(--accent-dark);
+}
+
+.thumb-img {
+  aspect-ratio: 1;
+  background: linear-gradient(145deg, #e0e0e0, #c8c8c8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: rgba(0,0,0,0.12);
+}
+
+.thumb-name {
+  display: block;
+  padding: 12px 10px 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.thumb-field {
+  display: block;
+  padding: 0 12px 14px;
+  font-size: 12px;
+  color: var(--text-sub);
+  text-align: center;
+}
+
+/* 상세 패널 */
+.instructor-detail {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.instructor-detail-inner {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 36px;
+  padding: 36px;
+}
+
+.instructor-photo {
+  aspect-ratio: 3/4;
+  background: linear-gradient(145deg, #e8e8e8, #d0d0d0);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  font-weight: 900;
+  color: rgba(0,0,0,0.1);
+}
+
+.instructor-field {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.instructor-name {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+.instructor-bio {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+@media (max-width: 1024px) {
+  .instructor-thumbs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .instructor-thumbs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instructor-detail-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .instructor-photo {
+    max-width: 200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructor-thumbs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .thumb-name { font-size: 13px; }
+  .thumb-field { font-size: 11px; }
+  .thumb-img { font-size: 24px; }
+}
