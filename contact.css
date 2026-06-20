@@ -1,0 +1,33 @@
+.contact-page .page-hero { display: none; }
+
+.contact-page main.contact-main {
+  padding-top: 64px;
+}
+
+.sub-visual--contact .sub-visual-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-lnb ul {
+  justify-content: center;
+}
+
+.contact-sec {
+  padding-bottom: 80px;
+}
+
+.contact-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.contact-section {
+  padding: 48px 0 0;
+}
+
+.contact-section .contact-box {
+  max-width: 640px;
+  margin: 0 auto;
+}

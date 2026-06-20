@@ -1,0 +1,110 @@
+/* 실용음악학원 — 보컬·악기·녹음·무대 관련 임시 사진 (Pexels) */
+
+:root {
+  --img-hero-1: url('https://images.pexels.com/photos/7607288/pexels-photo-7607288.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  --img-hero-2: url('https://images.pexels.com/photos/7688360/pexels-photo-7688360.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  --img-hero-3: url('https://images.pexels.com/photos/3756944/pexels-photo-3756944.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  --img-sub-about: url('https://images.pexels.com/photos/8460851/pexels-photo-8460851.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+
+.hero-slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-slide:nth-child(1) {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.62)), var(--img-hero-1);
+}
+
+.hero-slide:nth-child(2) {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.62)), var(--img-hero-2);
+}
+
+.hero-slide:nth-child(3) {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.62)), var(--img-hero-3);
+}
+
+.sub-visual-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-page .sub-visual-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), var(--img-sub-about);
+}
+
+.about-intro-img {
+  background-image: url('https://images.pexels.com/photos/6139045/pexels-photo-6139045.jpeg?auto=compress&cs=tinysrgb&w=900');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-intro-img span {
+  display: none;
+}
+
+.goal-img--1 {
+  background-image: url('https://images.pexels.com/photos/7688369/pexels-photo-7688369.jpeg?auto=compress&cs=tinysrgb&w=700');
+}
+
+.goal-img--2 {
+  background-image: url('https://images.pexels.com/photos/7861497/pexels-photo-7861497.jpeg?auto=compress&cs=tinysrgb&w=700');
+}
+
+.goal-img--3 {
+  background-image: url('https://images.pexels.com/photos/6956442/pexels-photo-6956442.jpeg?auto=compress&cs=tinysrgb&w=700');
+}
+
+.course-feature-img,
+.facility-block-img,
+.gallery-item,
+.thumb-img,
+.instructor-photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.course-feature-img span,
+.facility-block-img span,
+.gallery-item span {
+  display: none;
+}
+
+.thumb-img,
+.instructor-photo {
+  color: transparent;
+}
+
+.sub-visual--programs .sub-visual-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url('https://images.pexels.com/photos/2109969/pexels-photo-2109969.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+
+.sub-visual--vocal .sub-visual-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url('https://images.pexels.com/photos/7607290/pexels-photo-7607290.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+
+.sub-visual--facility .sub-visual-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url('https://images.pexels.com/photos/7986578/pexels-photo-7986578.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+
+.sub-visual--teachers .sub-visual-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url('https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+
+.sub-visual--direction .sub-visual-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url('https://images.pexels.com/photos/7679656/pexels-photo-7679656.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+
+.sub-visual--contact .sub-visual-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url('https://images.pexels.com/photos/335968/pexels-photo-335968.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
