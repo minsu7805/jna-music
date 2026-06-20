@@ -232,6 +232,22 @@ ul { list-style: none; }
 
 .hero-slide.active { opacity: 1; }
 
+.hero-slide--photo .hero-dim {
+  background: linear-gradient(90deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.55) 45%, rgba(255,255,255,0.15) 100%);
+}
+
+.hero-slide--photo-1 {
+  background: url('images/hero-slide-1.png') center / cover no-repeat;
+}
+
+.hero-slide--photo-2 {
+  background: url('images/hero-slide-2.png') center / cover no-repeat;
+}
+
+.hero-slide--photo-3 {
+  background: url('images/hero-slide-3.png') center / cover no-repeat;
+}
+
 .hero-dim {
   position: absolute;
   inset: 0;

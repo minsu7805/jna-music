@@ -1,28 +1,7 @@
 /* 실용음악학원 — 보컬·악기·녹음·무대 관련 임시 사진 (Pexels) */
 
 :root {
-  --img-hero-1: url('https://images.pexels.com/photos/7607288/pexels-photo-7607288.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  --img-hero-2: url('https://images.pexels.com/photos/7688360/pexels-photo-7688360.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  --img-hero-3: url('https://images.pexels.com/photos/3756944/pexels-photo-3756944.jpeg?auto=compress&cs=tinysrgb&w=1920');
   --img-sub-about: url('https://images.pexels.com/photos/8460851/pexels-photo-8460851.jpeg?auto=compress&cs=tinysrgb&w=1600');
-}
-
-.hero-slide {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.hero-slide:nth-child(1) {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.62)), var(--img-hero-1);
-}
-
-.hero-slide:nth-child(2) {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.62)), var(--img-hero-2);
-}
-
-.hero-slide:nth-child(3) {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.62)), var(--img-hero-3);
 }
 
 .sub-visual-bg {
