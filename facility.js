@@ -24,6 +24,19 @@
         },
       ],
       gallery: ['레슨실', '연습실', '로비', '합주실', '보컬실', '기타실'],
+      blockImages: [
+        'images/facility-juni-interior.png',
+        'images/facility-juni-facilities.png',
+        'images/facility-juni-benefit.png',
+      ],
+      galleryImages: [
+        'images/facility-gallery-1.png',
+        'images/facility-gallery-2.png',
+        'images/facility-gallery-3.png',
+        'images/facility-gallery-4.png',
+        'images/facility-gallery-5.png',
+        'images/facility-gallery-6.png',
+      ],
     },
     md: {
       id: 'md',
@@ -49,6 +62,8 @@
         },
       ],
       gallery: ['레슨실', '드럼실', '피아노실', '로비', '연습실', '합주실'],
+      blockImages: [null, null, null],
+      galleryImages: [null, null, null, null, null, null],
     },
   };
 
@@ -58,23 +73,37 @@
   const pageName = document.getElementById('branch-page-name');
   const lnbLinks = document.querySelectorAll('.facility-lnb a[data-branch]');
 
+  function facilityImgStyle(url) {
+    if (!url) return 'background-image:none;background-color:#e8e8e8;';
+    return JNA_IMG.bgStyle(url);
+  }
+
   function renderBranch(branch) {
-    const blocksHtml = branch.blocks.map((b, i) => `
+    const blocksHtml = branch.blocks.map((b, i) => {
+      const imgUrl = branch.blockImages[i];
+      const emptyClass = imgUrl ? '' : ' is-empty';
+      return `
       <article class="facility-block ${i % 2 === 1 ? 'facility-block--reverse' : ''}">
-        <div class="facility-block-img" aria-hidden="true" style="${JNA_IMG.bgStyle(JNA_IMG.facility.blocks[i])}"></div>
+        <div class="facility-block-img${emptyClass}" aria-hidden="true" style="${facilityImgStyle(imgUrl)}"></div>
         <div class="facility-block-text">
           <p class="facility-block-tit">${b.tit}</p>
           <p class="facility-block-desc">${b.text.replace(/\n/g, '<br>')}</p>
         </div>
       </article>
-    `).join('');
+    `;
+    }).join('');
 
-    const galleryHtml = branch.gallery.map((label, i) =>
-      `<div class="gallery-item" style="${JNA_IMG.bgStyle(JNA_IMG.facility.gallery[i % JNA_IMG.facility.gallery.length])}"><span>${label}</span></div>`
-    ).join('');
+    const galleryHtml = branch.gallery.map((label, i) => {
+      const imgUrl = branch.galleryImages[i];
+      const emptyClass = imgUrl ? '' : ' is-empty';
+      return `<div class="gallery-item${emptyClass}" style="${facilityImgStyle(imgUrl)}"><span>${label}</span></div>`;
+    }).join('');
 
-    contentEl.innerHTML = `
-      <div class="facility-contact">
+    const galleryNote = branch.id === 'juni'
+      ? '※ 사진은 주니아티스트(풍덕천점) 시설 기준입니다.'
+      : '※ 시설 사진 준비 중입니다.';
+
+    contentEl.innerHTML = `      <div class="facility-contact">
         <p><strong>주소</strong> ${branch.address}</p>
         <p><strong>전화</strong> <a href="tel:${branch.phone.replace(/[^0-9]/g, '')}">${branch.phone}</a></p>
       </div>
@@ -82,7 +111,7 @@
       <div class="facility-gallery">
         <h2 class="facility-gallery-tit">GALLERY</h2>
         <div class="facility-gallery-grid">${galleryHtml}</div>
-        <p class="facility-gallery-note">※ 임시 사진입니다. 실제 시설 사진으로 교체 예정입니다.</p>
+        <p class="facility-gallery-note">${galleryNote}</p>
       </div>
     `;
   }

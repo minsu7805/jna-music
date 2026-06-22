@@ -17,7 +17,7 @@
       ],
       subjects: [{ name: '보컬' }],
       features: [
-        { img: '보컬', tit: '입시 보컬', desc: '실용음악·보컬 전공 입시 대비, 학교별 요강 맞춤 실기 준비' },
+        { img: '입시', tit: '입시 보컬', desc: '실용음악·보컬 전공 입시 대비, 학교별 요강 맞춤 실기 준비' },
         { img: '강사진', tit: '검증된 강사진', desc: '현장 경험이 풍부한 보컬 전문 강사진의 1:1 레슨' },
         { img: '연주회', tit: '정기 연주회', desc: '충분한 실전 무대 경험을 위한 정기 발표' },
         { img: '실기평가', tit: '정기 실기평가', desc: '주기적인 평가로 실력 점검과 전략 보완' },
@@ -44,7 +44,7 @@
       ],
       subjects: [{ name: '보컬' }],
       features: [
-        { img: '보컬', tit: '오디션 보컬', desc: '기획사·오디션 대비 보컬 실전 훈련' },
+        { img: '오디션', tit: '오디션 보컬', desc: '기획사·오디션 대비 보컬 실전 훈련' },
         { img: '무대', tit: '무대 매너', desc: '무대 표현력과 자신감 있는 퍼포먼스' },
         { img: '장르', tit: '장르별 창법', desc: '발라드, 팝, R&B 등 장르에 맞는 보컬 스타일' },
         { img: '녹음', tit: '녹음 실습', desc: '데모·영상 오디션을 위한 녹음 경험' },
@@ -109,6 +109,8 @@
     `).join('');
 
     const featureImgMap = {
+      '입시': JNA_IMG.vocal.entrance,
+      '오디션': JNA_IMG.vocal.audition,
       '보컬': JNA_IMG.vocal.vocal,
       '강사진': JNA_IMG.vocal.teacher,
       '연주회': JNA_IMG.vocal.concert,
@@ -167,8 +169,8 @@
 
     visualTitle.textContent = course.label;
     breadcrumbCourse.textContent = course.label;
-    pageName.textContent = `보컬레슨 · ${course.label}`;
-    document.title = `보컬레슨 ${course.label} — JNA 실용음악학원`;
+    pageName.textContent = `보컬과정 · ${course.label}`;
+    document.title = `보컬과정 ${course.label} — JNA 실용음악학원`;
 
     lnbLinks.forEach(link => {
       link.classList.toggle('is-active', link.dataset.course === courseId);

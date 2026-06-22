@@ -5,7 +5,7 @@
     tag: 'HOBBY COURSE',
     subtitle: '기타·드럼·피아노·작곡, 부담 없이 시작하는 취미 레슨',
     lead: '입시·오디션 과정 없이 즐겁게 배우는 1:1 맞춤 취미 과정입니다. 성인·키즈 모두 환영합니다.',
-    programNote: '개설과목 : 기타, 드럼, 재즈/실용피아노, 작곡, 키즈/성인피아노',
+    programNote: '개설과목 : 보컬, 기타, 드럼, 재즈/실용피아노, 작곡, 키즈/성인피아노',
     subjectTit: '개설과목',
     points: [
       { tit: '초보\n환영', desc: '처음 시작하는 분도 부담 없이 입문 가능' },
@@ -15,6 +15,7 @@
       { tit: '키즈·성인\n분리', desc: '연령에 맞는 커리큘럼과 학습 속도' },
     ],
     subjects: [
+      { name: '보컬' },
       { name: '기타' },
       { name: '드럼' },
       { name: '재즈/실용피아노' },
@@ -22,9 +23,10 @@
       { name: '키즈/성인피아노', link: 'piano.html' },
     ],
     features: [
-      { img: '기타', tit: '기타', desc: '통기타·일렉기타 취미 연주, 코드·반주 기초' },
-      { img: '드럼', tit: '드럼', desc: '리듬·필인 기초부터 밴드·취미 연주까지' },
-      { img: '피아노', tit: '재즈/실용피아노', desc: '코드·스케일·반주 중심의 실용 피아노 레슨' },
+      { img: '보컬', tit: '보컬', desc: '발성·호흡 기초부터 원하는 곡 중심의 보컬 레슨', youtube: '0kMkKIbzzcI' },
+      { img: '기타', tit: '기타', desc: '통기타·일렉기타 취미 연주, 코드·반주 기초', youtube: 'lZwL74n-0-I' },
+      { img: '드럼', tit: '드럼', desc: '리듬·필인 기초부터 밴드·취미 연주까지', youtube: 'BQWa9NKfw4g' },
+      { img: '피아노', tit: '재즈/실용피아노', desc: '코드·스케일·반주 중심의 실용 피아노 레슨', youtube: 'RpHVJcsdJ5A' },
       { img: '작곡', tit: '작곡', desc: '화성·멜로디 기초, DAW 입문·편곡 체험' },
       { img: '키즈', tit: '키즈/성인 피아노', desc: '연령별 맞춤 피아노, 클래식·반주 기초', link: 'piano.html' },
       { img: '연습', tit: '연습 환경', desc: '레슨 외 연습을 위한 쾌적한 공간' },
@@ -57,6 +59,53 @@
     `;
   }
 
+  function youtubeMediaHtml(videoId, title) {
+    return `
+      <div
+        class="course-feature-video course-feature-video--pending"
+        data-youtube-id="${videoId}"
+        data-youtube-title="${title}"
+      >
+        <button type="button" class="course-feature-video-play" aria-label="${title} 수업 영상 재생">
+          <img
+            class="course-feature-video-thumb"
+            src="https://i.ytimg.com/vi/${videoId}/hqdefault.jpg"
+            alt=""
+            loading="lazy"
+          >
+          <span class="course-feature-video-play-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    `;
+  }
+
+  function initYoutubePlayers() {
+    contentEl.querySelectorAll('.course-feature-video--pending').forEach((el) => {
+      const btn = el.querySelector('.course-feature-video-play');
+      if (!btn) return;
+
+      btn.addEventListener('click', () => {
+        const videoId = el.dataset.youtubeId;
+        if (!videoId) return;
+
+        el.classList.remove('course-feature-video--pending');
+
+        if (window.JNA_YT && window.JNA_YT.mount) {
+          window.JNA_YT.mount(el, videoId);
+          return;
+        }
+
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?feature=oembed&autoplay=1&rel=0&playsinline=1`;
+        iframe.title = `${el.dataset.youtubeTitle || '수업 영상'} 수업 영상`;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.allowFullscreen = true;
+        el.replaceChildren(iframe);
+      });
+    });
+  }
+
   function render() {
     const pointsHtml = course.points.map((p, i) => `
       <div class="course-point">
@@ -69,6 +118,7 @@
     const subjectsHtml = course.subjects.map(subjectItem).join('');
 
     const featureImgMap = {
+      '보컬': JNA_IMG.vocal.vocal,
       '기타': JNA_IMG.programs.guitar,
       '드럼': JNA_IMG.programs.drums,
       '피아노': JNA_IMG.programs.piano,
@@ -79,9 +129,12 @@
 
     const featuresHtml = course.features.map(f => {
       const imgUrl = featureImgMap[f.img] || JNA_IMG.programs.practice;
+      const mediaHtml = f.youtube
+        ? youtubeMediaHtml(f.youtube, f.tit)
+        : `<div class="course-feature-img" style="${JNA_IMG.bgStyle(imgUrl)}"><span>${f.img}</span></div>`;
       const inner = `
         <article class="course-feature">
-          <div class="course-feature-img" style="${JNA_IMG.bgStyle(imgUrl)}"><span>${f.img}</span></div>
+          ${mediaHtml}
           <div class="course-feature-text">
             <p class="course-feature-tit">${f.tit}</p>
             <p class="course-feature-desc">${f.desc}</p>
@@ -113,6 +166,8 @@
         <a href="contact.html" class="btn-contact">${course.cta}</a>
       </div>
     `;
+
+    initYoutubePlayers();
   }
 
   render();

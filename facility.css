@@ -4,7 +4,7 @@
 
 .sub-visual--facility .sub-visual-bg {
   background-size: cover;
-  background-position: center;
+  background-position: center 45%;
 }
 
 .facility-lnb ul {
@@ -111,6 +111,18 @@
 
 .gallery-item:hover {
   opacity: 0.85;
+}
+
+.gallery-item.is-empty span {
+  display: block;
+}
+
+.facility-block-img.is-empty {
+  background-color: #e8e8e8;
+}
+
+.gallery-item.is-empty {
+  background-color: #e8e8e8;
 }
 
 .facility-gallery-note {

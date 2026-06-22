@@ -12,56 +12,58 @@
       p(3756944, 1920),  /* 밴드·무대 공연 */
     ],
     sub: {
-      about: p(8460851, 1600),      /* 음악학원 레슨실 */
+      about: 'images/about-banner.png',
       teachers: p(7688336, 1600),   /* 강사·레슨 */
       vocal: p(7607290, 1600),      /* 보컬 수업 */
-      programs: p(2109969, 1600),   /* 기타 레슨 */
-      facility: p(7986578, 1600),   /* 녹음실 */
+      programs: 'images/programs-banner.png?v=2',
+      facility: 'images/facility-banner.png',
       direction: p(7679656, 1600),  /* 학원 건물 */
       contact: p(335968, 1600),     /* 마이크·상담 */
     },
     about: {
-      intro: p(6139045, 900),       /* 1:1 음악 레슨 */
+      intro: 'images/about-intro.png',
       goals: [
-        p(7688369, 700),            /* 음악 기초·연습 */
-        p(7861497, 700),            /* 녹음·실전 */
-        p(6956442, 700),            /* 보컬·무대 */
+        'images/about-goal-foundation.png',
+        'images/about-goal-professional.png?v=8',
+        'images/about-goal-stage.png',
       ],
     },
     facility: {
       blocks: [
-        p(7986578, 900),            /* 녹음 스튜디오 */
-        p(8460851, 900),            /* 레슨실 */
-        p(7861500, 900),            /* 합주·연습 공간 */
+        'images/facility-juni-interior.png',
+        'images/facility-juni-facilities.png',
+        'images/facility-juni-benefit.png',
       ],
       gallery: [
-        p(7607288, 600),             /* 보컬실 */
-        p(3778619, 600),             /* 드럼실 */
-        p(6977352, 600),             /* 피아노실 */
-        p(2109969, 600),             /* 기타실 */
-        p(7861497, 600),             /* 녹음부스 */
-        p(1540406, 600),             /* 합주실 */
+        'images/facility-gallery-1.png',
+        'images/facility-gallery-2.png',
+        'images/facility-gallery-3.png',
+        'images/facility-gallery-4.png',
+        'images/facility-gallery-5.png',
+        'images/facility-gallery-6.png',
       ],
     },
     programs: {
       guitar: p(2109969, 700),
       drums: p(3778619, 700),
       piano: p(7688360, 700),
-      compose: p(9964648, 700),
-      kids: p(1648216, 700),
-      practice: p(7861500, 700),
+      compose: 'images/programs-compose.png?v=2',
+      kids: 'images/programs-kids-piano.png',
+      practice: 'images/programs-practice.png',
     },
     vocal: {
+      entrance: 'images/vocal-entrance.png',
+      audition: 'images/vocal-audition.png?v=2',
       vocal: p(7607288, 700),
-      teacher: p(7688336, 700),
-      concert: p(3756944, 700),
-      eval: p(7861497, 700),
-      breath: p(6956442, 700),
-      record: p(7986578, 700),
-      mock: p(7861500, 700),
-      stage: p(1105666, 700),
-      genre: p(7607290, 700),
-      live: p(1540406, 700),
+      teacher: 'images/vocal-teacher.png',
+      concert: 'images/vocal-concert.png',
+      eval: 'images/vocal-eval.png?v=3',
+      breath: 'images/vocal-breath.png',
+      record: 'images/vocal-record.png',
+      mock: 'images/vocal-mock.png',
+      stage: 'images/vocal-stage.png',
+      genre: 'images/vocal-genre.png',
+      live: 'images/vocal-live.png',
       lesson: p(6139045, 700),
       practice: p(8460851, 700),
     },

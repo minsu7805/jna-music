@@ -1,16 +1,23 @@
 (function () {
+  if (window.location.protocol === 'file:') {
+    const page = window.location.href.split(/[\\/]/).pop().split('?')[0].split('#')[0] || 'index.html';
+    window.location.replace('http://localhost:5500/' + page + window.location.search + window.location.hash);
+    return;
+  }
+
   const page = document.body.dataset.page || 'home';
+  const SHOW_TEACHERS = false; // true로 바꾸면 강사소개 메뉴 다시 표시
 
   const navItems = [
     { id: 'home', label: '홈', href: 'index.html' },
     { id: 'about', label: '학원소개', href: 'about.html' },
     { id: 'teachers', label: '강사소개', href: 'teachers.html' },
-    { id: 'vocal', label: '보컬레슨', href: 'vocal.html' },
+    { id: 'vocal', label: '보컬과정', href: 'vocal.html' },
     { id: 'programs', label: '실용악기과정', href: 'programs.html' },
     { id: 'facility', label: '시설안내', href: 'facility.html' },
     { id: 'direction', label: '오시는 길', href: 'direction.html' },
     { id: 'contact', label: '상담문의', href: 'contact.html' },
-  ];
+  ].filter(item => SHOW_TEACHERS || item.id !== 'teachers');
 
   const navHtml = navItems.map(item =>
     `<a href="${item.href}" class="${page === item.id ? 'is-active' : ''}">${item.label}</a>`
