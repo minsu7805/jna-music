@@ -43,7 +43,7 @@
       label: 'M&D (신봉점)',
       short: 'M&D',
       address: '경기도 용인시 수지구 신봉1로 157 파크프라자 3층',
-      phone: '010-0000-0000',
+      phone: '010-2806-5631',
       blocks: [
         {
           tit: 'INTERIOR',
@@ -61,9 +61,18 @@
           imgLabel: '연습 공간',
         },
       ],
-      gallery: ['레슨실', '드럼실', '피아노실', '로비', '연습실', '합주실'],
-      blockImages: [null, null, null],
-      galleryImages: [null, null, null, null, null, null],
+      gallery: ['레슨실', '드럼실', '피아노실', '로비'],
+      blockImages: [
+        'images/facility-md-interior.png?v=2',
+        'images/facility-md-facilities.png?v=2',
+        'images/facility-md-benefit.png',
+      ],
+      galleryImages: [
+        'images/facility-md-lesson.png',
+        'images/facility-md-drums.png',
+        'images/facility-md-piano.png',
+        'images/facility-md-lobby.png',
+      ],
     },
   };
 
@@ -101,7 +110,7 @@
 
     const galleryNote = branch.id === 'juni'
       ? '※ 사진은 주니아티스트(풍덕천점) 시설 기준입니다.'
-      : '※ 시설 사진 준비 중입니다.';
+      : '※ 사진은 M&D(신봉점) 시설 기준입니다.';
 
     contentEl.innerHTML = `      <div class="facility-contact">
         <p><strong>주소</strong> ${branch.address}</p>

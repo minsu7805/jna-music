@@ -6,7 +6,6 @@
       short: '주니아티스트',
       roadAddress: '경기도 용인시 수지구 정평로 36 우성프라자 3층',
       phone: '031-898-2256',
-      email: 'contact@jna-music.com',
       hours: [
         { day: '평일', time: '13:00 ~ 21:00' },
         { day: '토요일', time: '부분운영' },
@@ -19,8 +18,7 @@
       label: 'M&D (신봉점)',
       short: 'M&D',
       roadAddress: '경기도 용인시 수지구 신봉1로 157 파크프라자 3층',
-      phone: '010-0000-0000',
-      email: 'contact@jna-music.com',
+      phone: '010-2806-5631',
       hours: [
         { day: '평일', time: '13:00 ~ 21:00' },
         { day: '토요일', time: '부분운영' },
@@ -69,7 +67,6 @@
           ${hoursRows}
         </table>
         <div class="contact-extra">
-          <p><strong>이메일</strong> <a href="mailto:${branch.email}">${branch.email}</a></p>
           <p><strong>위치</strong> ${branch.roadAddress}</p>
         </div>
         <a href="tel:${tel}" class="btn-contact">상담 문의하기</a>
