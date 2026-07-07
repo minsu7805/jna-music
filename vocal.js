@@ -49,7 +49,7 @@
         { img: '장르', tit: '장르별 창법', desc: '발라드, 팝, R&B 등 장르에 맞는 보컬 스타일' },
         { img: '녹음', tit: '녹음 실습', desc: '데모·영상 오디션을 위한 녹음 경험' },
         { img: '라이브', tit: '녹음·라이브 실전', desc: '녹음실·라이브 퍼포먼스 훈련으로 표현력 강화' },
-        { img: '레슨', tit: '1:1 집중 레슨', desc: '오디션 일정에 맞춘 집중 개인 수업' },
+        { img: '집중', tit: '1:1 집중 레슨', desc: '오디션 일정에 맞춘 집중 개인 수업' },
       ],
       cta: '오디션반 상담문의',
     },
@@ -111,6 +111,7 @@
     const featureImgMap = {
       '입시': JNA_IMG.vocal.entrance,
       '오디션': JNA_IMG.vocal.audition,
+      '집중': JNA_IMG.vocal.auditionLesson,
       '보컬': JNA_IMG.vocal.vocal,
       '강사진': JNA_IMG.vocal.teacher,
       '연주회': JNA_IMG.vocal.concert,

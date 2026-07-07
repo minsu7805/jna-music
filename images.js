@@ -54,7 +54,8 @@
     vocal: {
       entrance: 'images/vocal-entrance.png',
       audition: 'images/vocal-audition.png?v=2',
-      vocal: p(7607288, 700),
+      auditionLesson: 'images/vocal-audition-lesson.png',
+      vocal: 'images/vocal-hobby.png',
       teacher: 'images/vocal-teacher.png',
       concert: 'images/vocal-concert.png',
       eval: 'images/vocal-eval.png?v=3',
@@ -64,8 +65,8 @@
       stage: 'images/vocal-stage.png',
       genre: 'images/vocal-genre.png',
       live: 'images/vocal-live.png',
-      lesson: p(6139045, 700),
-      practice: p(8460851, 700),
+      lesson: 'images/vocal-hobby-lesson.png',
+      practice: 'images/vocal-hobby-practice.png',
     },
     teachers: {
       vocal: p(7607288, 600),
